@@ -1,30 +1,20 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Awesome Books
-In this project, We  refactor the Awesome books application to use JavaScript classes.
+In this project, I refactored the Awesome books application to use JavaScript modules.
 
  ## Learning objectives
-- Use JavaScript classes.
-- Understand how to use medium-fidelity wireframes to create a UI.
+- Use JavaScript modules
+- Use a medium-fidelity wireframe to create a UI.
 
 ## Built With
 
 - HTML, CSS, JavaScript
 
+## Live Demo
+You can view the website [here](https://jaymelfah.github.io/Awesome-books/)
 
-## Getting Started
-Open index.html
 
-### To launch the project locally:
-
-#### Step 1:
-- Clone this repository in your local machine terminal:
-
-git clone <code>https://github.com/Okechukwu-muokwugwo/Awesome-books.git</code>
-
-#### Step 2:
-
-- Open the html pages in a web browser preferrably Chrome.
 
 ## Author
 

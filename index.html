@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Awesome Books</title>
+</head>
+<body>
+    <header class="container">
+        <nav class="nav-bar">
+            <h2 class="home-link"><a href="#">Awesome Books</a></h2>
+            <ul class="page-links">
+                <li class="nav-item" id="link"><a href="#book-list-section" id='link-a'>List </a></li>
+                <li class="nav-item" id="add-new"><a href="#add-book-form" id='add-new-a'>Add New </a></li>
+                <li class="nav-item" id="contact"><a href="#contact-section" id='contact-a'>Contact</a></li>
+            </ul>
+        </nav>
+        <div class="date"></div>
+        
+    </header>
+    <div class="book-list-section" id="book-list-section">
+        <h1 class="title">All Awesome Books</h1> 
+        <div class="books-container" id="books"> 
+        </div>
+    </div>
+    
+    <div class="contact-section" id="contact-section">
+        <h2 class="contact-title">Contact Information</h2>
+        <p class="contact-info">Do you have any question or you just want to say "Hello"?<br> You can reach out to us! </p>
+        <ul class="contact-address">
+            <li>Our email: mail@mail.com </li>
+            <li>Our phone number: 0043686634422</li>
+            <li>Our address: street name 1T2,8450330, country</li>
+        </ul>
+    </div>
+    <form id="add-book-form" method="post" class="add-books">
+        <h2>Add a new book</h2>
+        <input id="book-title" class="title-input" type="text" placeholder="Title" required> <br> <br>
+        <input id="book-author" class="author-input" type="text" placeholder="Author" required> <br> <br>
+        <button type="submit" class="add-book">Add</button>
+    </form>
+
+    <footer class="footer-section">
+        <h2 class="copyright">Copyright ...@Jay2022</h2>
+    </footer>
+
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
