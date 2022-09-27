@@ -13,14 +13,5 @@ const sendToLocal = (a, b) => {
   createBooks();
 };
 
-// const del = () => {
-//   deleteButton.forEach((btn) => {
-//     btn.addEventListener('click', () => {
-//       console.log('pray');
-//       delBook(btn);
-//     });
-//   });
-// };
 export default createBooks;
 export { sendToLocal };
-// onclick="delBook(${bookList.id})"

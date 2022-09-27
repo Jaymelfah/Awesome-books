@@ -133,7 +133,7 @@ body {
   margin-left: 1rem;
 }
 
-#remove-book {
+.remove-books {
   margin-right: 2%;
   background-color: white;
   position: absolute;

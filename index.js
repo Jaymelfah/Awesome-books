@@ -5,11 +5,6 @@ import addBook from './modules/addBook.js';
 import { DateTime } from './modules/luxon.js';
 import sendToLocal from './modules/sendToLocal.js';
 
-// Add date
-document.addEventListener('DOMContentLoaded', () => {
-  const now = DateTime.now();
-  document.querySelector('.date').innerHTML = now;
-});
 // Rendering various links
 const link = document.getElementById('link-a');
 const addNew = document.getElementById('add-new-a');
@@ -51,16 +46,24 @@ document.getElementById('add-book-form').addEventListener('submit', (e) => {
 
 document.addEventListener('click', (event) => {
   if (event.target.classList.contains('remove-books')) {
-    console.log('remove');
-    // bookData.splice(event.target.id, 1);
-    event.target.parentElement.remove();
-    console.log(event.target.id);
-    const removeObjectWithId = (bookData, id) => {
-      const objWithIdIndex = bookData.findIndex((obj) => obj.id === id);
-      bookData.splice(objWithIdIndex, 1);
-      return bookData;
-    };
-    removeObjectWithId(bookData, event.target.id);
+    let bookData = JSON.parse(localStorage.getItem('storageBooksData'))
+      ? JSON.parse(localStorage.getItem('storageBooksData'))
+      : [];
+
+    const filter = bookData.filter((item) => item.id !== parseInt(event.target.id, 10));
+    bookData = filter;
     sendToLocal('storageBooksData', bookData);
+    createBooks();
+    window.location.reload();
+    // return bookData;
   }
 });
+
+// Add date
+const currentDate = () => {
+  const dt = DateTime.now();
+  const date = dt.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
+  document.querySelector('.date').innerHTML = date;
+  setTimeout(currentDate, 1000);
+};
+window.onload = currentDate();
