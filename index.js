@@ -1,15 +1,14 @@
 import bookData from './modules/bookData.js';
 import Awesomebooks from './modules/class.js';
-import createBooks, { del } from './modules/createBooks.js';
+import createBooks from './modules/createBooks.js';
 import addBook from './modules/addBook.js';
+import { DateTime } from './modules/luxon.js';
+import sendToLocal from './modules/sendToLocal.js';
 
 // Add date
 document.addEventListener('DOMContentLoaded', () => {
-  const today = new Date();
-  const date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
-  const time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
-  const dateTime = `${date} ${time}`;
-  document.querySelector('.date').innerHTML = dateTime;
+  const now = DateTime.now();
+  document.querySelector('.date').innerHTML = now;
 });
 // Rendering various links
 const link = document.getElementById('link-a');
@@ -48,4 +47,20 @@ document.getElementById('add-book-form').addEventListener('submit', (e) => {
   addBook(bookObject);
   document.getElementById('book-title').value = '';
   document.getElementById('book-author').value = '';
+});
+
+document.addEventListener('click', (event) => {
+  if (event.target.classList.contains('remove-books')) {
+    console.log('remove');
+    // bookData.splice(event.target.id, 1);
+    event.target.parentElement.remove();
+    console.log(event.target.id);
+    const removeObjectWithId = (bookData, id) => {
+      const objWithIdIndex = bookData.findIndex((obj) => obj.id === id);
+      bookData.splice(objWithIdIndex, 1);
+      return bookData;
+    };
+    removeObjectWithId(bookData, event.target.id);
+    sendToLocal('storageBooksData', bookData);
+  }
 });

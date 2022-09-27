@@ -1,5 +1,5 @@
 import bookData from './bookData.js';
-import sendToLocal from './sendToLocal.js';
+import { sendToLocal } from './createBooks.js';
 // Method to add books
 const addBook = (bookItem) => {
   bookData.push(bookItem);
