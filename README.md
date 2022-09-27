@@ -11,6 +11,10 @@ In this project, I refactored the Awesome books application to use JavaScript mo
 
 - HTML, CSS, JavaScript
 
+## Live Demo
+You can view the website [here](https://jaymelfah.github.io/Awesome-books/)
+
+
 
 ## Author
 
